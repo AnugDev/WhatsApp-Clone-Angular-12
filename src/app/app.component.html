@@ -1,0 +1,26 @@
+<div id="background_header"></div>
+<div id="background_body"></div>
+
+<div id="chatContainer">
+  <app-sidebar
+    (conversationClicked)="onConversationSelected($event)"
+  ></app-sidebar>
+  <div id="chat">
+    <div id="chatPlaceholder" *ngIf="!conversation">
+      <img width="255" src="../assets/images/phoneIcon.png" />
+      <h4>Pastikan telepon Anda terhubung <br />ke Internet</h4>
+      <p>
+        WhatsApp melakukan koneksi ke telepon Anda untuk menyingkronkan pesan.
+        Untuk mengurangi data, sambungkan telepon Anda ke Wi-Fi
+      </p>
+      <div class="seperator"></div>
+      <p>
+        WhatsApp tersedia untuk Windows.
+        <a href="https://www.whatsapp.com/download">Dapatkan disini.</a>
+      </p>
+    </div>
+    <app-chat [conversation]="conversation" *ngIf="conversation"></app-chat>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

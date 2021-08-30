@@ -1,0 +1,51 @@
+<div id="sidebar">
+  <div id="row1">
+    <div id="sidebarHeader">
+      <div class="avatarContainer">
+        <img src="../../assets/images/noPic.svg" />
+      </div>
+
+      <div class="actionsContainer">
+        <img width="22" src="../../assets/images/statusIcon.svg" />
+        <img width="24" src="../../assets/images/chatIcon.svg" />
+        <img width="24" src="../../assets/images/moreVertIcon.svg" />
+      </div>
+    </div>
+
+    <div id="searchBox">
+      <img width="15" src="../assets/images/searchIcon.png" />
+      <input type="text" placeholder="Cari atau mulai chat baru" />
+    </div>
+  </div>
+
+  <div id="sidebarContent">
+    <div
+      class="conversation"
+      *ngFor="let conversation of conversations"
+      (click)="conversationClicked.emit(conversation)"
+    >
+      <div class="picture">
+        <img src="../../assets/images/noPic.svg" />
+      </div>
+      <div class="content">
+        <div class="conversationHeader">
+          <div class="name">{{ conversation.name }}</div>
+          <div class="time">{{ conversation.time }}</div>
+        </div>
+        <div class="message">
+          <img
+            *ngIf="!conversation.latestMessageRead"
+            src="../../assets/images/doubleTick.svg"
+          />
+          <img
+            *ngIf="conversation.latestMessageRead"
+            src="../../assets/images/doubleTickBlue.svg"
+          />
+          <div class="textOverflow">
+            {{ conversation.latestMessage }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

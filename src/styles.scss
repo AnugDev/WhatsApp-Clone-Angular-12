@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+//implement emoji picker
+@import "~@ctrl/ngx-emoji-mart/picker";
+
+//implement bootstap
+@import "~bootstrap/scss/bootstrap";
+
+//implements Tailwind CSS
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+//Global setup
+
+body {
+  margin: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #a2a3a4;
+
+  a {
+    color: #45bf57;
+    text-decoration: none;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
